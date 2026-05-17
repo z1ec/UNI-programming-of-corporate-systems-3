@@ -86,114 +86,19 @@ CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/main.cpp -o CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.s
 
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/flags.make
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o: /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketCapture.cpp
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o -MF CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o.d -o CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o -c /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketCapture.cpp
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketCapture.cpp > CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.i
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketCapture.cpp -o CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.s
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/flags.make
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o: /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketParser.cpp
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o -MF CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o.d -o CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o -c /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketParser.cpp
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketParser.cpp > CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.i
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketParser.cpp -o CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.s
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/flags.make
-CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o: /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PcapCaptureStrategy.cpp
-CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o -MF CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o.d -o CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o -c /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PcapCaptureStrategy.cpp
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PcapCaptureStrategy.cpp > CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.i
-
-CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PcapCaptureStrategy.cpp -o CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.s
-
-CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/flags.make
-CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o: /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/TrafficStatistics.cpp
-CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o -MF CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o.d -o CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o -c /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/TrafficStatistics.cpp
-
-CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/TrafficStatistics.cpp > CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.i
-
-CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/TrafficStatistics.cpp -o CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.s
-
-CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/flags.make
-CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o: /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ReportGenerator.cpp
-CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o -MF CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o.d -o CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o -c /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ReportGenerator.cpp
-
-CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ReportGenerator.cpp > CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.i
-
-CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ReportGenerator.cpp -o CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.s
-
-CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/flags.make
-CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o: /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ConsoleUI.cpp
-CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o: CMakeFiles/NetworkPacketSniffer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o -MF CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o.d -o CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o -c /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ConsoleUI.cpp
-
-CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ConsoleUI.cpp > CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.i
-
-CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ConsoleUI.cpp -o CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.s
-
 # Object files for target NetworkPacketSniffer
 NetworkPacketSniffer_OBJECTS = \
-"CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.o" \
-"CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o" \
-"CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o" \
-"CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o" \
-"CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o" \
-"CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o" \
-"CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o"
+"CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.o"
 
 # External object files for target NetworkPacketSniffer
 NetworkPacketSniffer_EXTERNAL_OBJECTS =
 
 NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.o
-NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o
-NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o
-NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o
-NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o
-NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o
-NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o
 NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/build.make
+NetworkPacketSniffer: libsniffer_lib.a
 NetworkPacketSniffer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libpcap.tbd
 NetworkPacketSniffer: CMakeFiles/NetworkPacketSniffer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable NetworkPacketSniffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable NetworkPacketSniffer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NetworkPacketSniffer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

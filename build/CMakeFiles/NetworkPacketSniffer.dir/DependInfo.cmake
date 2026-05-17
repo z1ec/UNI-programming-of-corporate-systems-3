@@ -8,12 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ConsoleUI.cpp" "CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o" "gcc" "CMakeFiles/NetworkPacketSniffer.dir/src/ConsoleUI.cpp.o.d"
-  "/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketCapture.cpp" "CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o" "gcc" "CMakeFiles/NetworkPacketSniffer.dir/src/PacketCapture.cpp.o.d"
-  "/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PacketParser.cpp" "CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o" "gcc" "CMakeFiles/NetworkPacketSniffer.dir/src/PacketParser.cpp.o.d"
-  "/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/PcapCaptureStrategy.cpp" "CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o" "gcc" "CMakeFiles/NetworkPacketSniffer.dir/src/PcapCaptureStrategy.cpp.o.d"
-  "/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/ReportGenerator.cpp" "CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o" "gcc" "CMakeFiles/NetworkPacketSniffer.dir/src/ReportGenerator.cpp.o.d"
-  "/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/TrafficStatistics.cpp" "CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o" "gcc" "CMakeFiles/NetworkPacketSniffer.dir/src/TrafficStatistics.cpp.o.d"
   "/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/src/main.cpp" "CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.o" "gcc" "CMakeFiles/NetworkPacketSniffer.dir/src/main.cpp.o.d"
   )
 
