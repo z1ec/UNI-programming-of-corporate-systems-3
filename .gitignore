@@ -1,5 +1,6 @@
 venv
 .claude
 generate_report.py
-build/*
+build
+generate_report_pa4.py
 
