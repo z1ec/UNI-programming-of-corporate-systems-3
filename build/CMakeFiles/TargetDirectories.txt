@@ -1,0 +1,7 @@
+/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles/NetworkPacketSniffer.dir
+/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles/edit_cache.dir
+/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles/rebuild_cache.dir
+/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles/list_install_components.dir
+/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles/install.dir
+/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles/install/local.dir
+/Users/vav3538/Documents/uni/UNI-programing-of-corporate-systems-3/build/CMakeFiles/install/strip.dir
