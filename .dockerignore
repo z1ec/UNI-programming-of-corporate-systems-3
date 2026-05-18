@@ -1,0 +1,20 @@
+# Local CMake build artifacts – rebuilt cleanly inside the container
+build/
+
+# Version-control metadata (not needed in the image)
+.git/
+.gitignore
+
+# IDE / Claude Code settings
+.claude/
+
+# Python virtual environment and helper scripts
+venv/
+generate_report.py
+generate_report_pa4.py
+
+# Runtime output files produced by the application
+traffic_report.txt
+
+# PDF assignment reports
+*.pdf

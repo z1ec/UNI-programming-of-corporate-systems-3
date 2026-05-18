@@ -224,3 +224,82 @@ reference, making every component independently testable.
 | GoogleTest (v1.14.0) | Unit testing framework (auto-fetched) | For tests only |
 | libpcap / Npcap | Real packet capture | No (mock mode is the default) |
 | C++17 STL | `std::optional`, smart pointers, `<chrono>`, … | Yes |
+
+---
+
+## Docker
+
+The project ships a **multi-stage Dockerfile**:
+
+| Stage | Purpose |
+|-------|---------|
+| `builder` | Installs all dependencies, compiles the project, and runs the full test suite |
+| `runtime` | Lean final image — only the binary + libpcap runtime; no build tools |
+
+The Docker build **fails if any test fails**, so a successful `docker build` is
+also proof that all tests pass.
+
+### Build the image
+
+```bash
+docker build -t network-packet-sniffer .
+```
+
+### Run the application interactively
+
+```bash
+# Mock / simulation mode (no special privileges needed)
+docker run -it network-packet-sniffer
+
+# Real packet capture (requires host network + CAP_NET_RAW)
+docker run -it --cap-add NET_RAW --net=host network-packet-sniffer
+```
+
+### Run tests inside the container
+
+```bash
+# Build only the builder stage (compile + test run is part of the build)
+docker build --target builder -t network-packet-sniffer-builder .
+
+# Re-run the full test suite
+docker run --rm network-packet-sniffer-builder \
+    ctest --test-dir /app/build --output-on-failure
+
+# Run with verbose GoogleTest output for a specific suite
+docker run --rm network-packet-sniffer-builder \
+    ctest --test-dir /app/build -R PacketParser --verbose
+
+# Run a single test binary directly
+docker run --rm network-packet-sniffer-builder \
+    /app/build/tests/test_TrafficStatistics
+
+# Run all scenario programs
+docker run --rm network-packet-sniffer-builder \
+    /app/build/tests/scenario_mock_capture
+```
+
+### Using docker-compose
+
+```bash
+# Build both stages
+docker-compose build
+
+# Run the interactive application
+docker-compose run --rm sniffer
+
+# Run the full test suite
+docker-compose run --rm test
+
+# Run a specific test suite via docker-compose
+docker-compose run --rm test \
+    ctest --test-dir /app/build -R TrafficStatistics --verbose
+```
+
+### Docker image contents
+
+The final `runtime` image contains **only**:
+- `/app/NetworkPacketSniffer` — the compiled binary
+- `libpcap0.8` — shared library for real packet capture
+
+All build tools (`cmake`, `g++`, `make`, `git`), headers, GoogleTest binaries,
+and temporary files are discarded after the builder stage.
