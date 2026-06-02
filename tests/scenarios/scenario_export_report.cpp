@@ -1,13 +1,4 @@
-// scenario_export_report.cpp
-//
-// Scenario: capture mock packets, accumulate statistics, export a report,
-//           then verify the report file content.
-//
-// Covers:
-//   • TCP/UDP/ICMP parsing
-//   • statistics calculation
-//   • report generation
-//   • file-based output verification
+
 
 #include "PacketCapture.h"
 #include "PacketParser.h"
@@ -41,7 +32,7 @@ bool contains(const std::string& haystack, const std::string& needle) {
 int main() {
     std::cout << "[scenario_export_report] Starting...\n";
 
-    // ── 1. Run a full mock capture ─────────────────────────────────────────
+
     PacketCapture capture(std::make_unique<MockCaptureStrategy>());
 
     if (!capture.selectInterface(0)) {
@@ -69,7 +60,7 @@ int main() {
     std::cout << "[OK] Captured " << stats.getTotalPackets() << " packets, "
               << stats.getTotalBytes() << " bytes.\n";
 
-    // ── 2. Export to a temporary file ─────────────────────────────────────
+
     const std::string tmpDir  = (fs::temp_directory_path() / "sniffer_tests").string();
     const std::string outPath = tmpDir + "/scenario_report.txt";
     fs::create_directories(tmpDir);
@@ -85,7 +76,7 @@ int main() {
     }
     std::cout << "[OK] Report written to: " << outPath << "\n";
 
-    // ── 3. Verify report content ───────────────────────────────────────────
+
     const std::string content = readFile(outPath);
 
     if (!contains(content, "TRAFFIC REPORT")) {
@@ -114,7 +105,7 @@ int main() {
     }
     std::cout << "[OK] Report content verified (TCP/UDP/ICMP and IPs present).\n";
 
-    // ── 4. Verify generating to an invalid path returns false ──────────────
+
     ReportGenerator bad("/no_such_dir/x/y/report.txt");
     if (bad.generateReport(stats)) {
         std::cerr << "[FAIL] generateReport to invalid path should return false.\n";

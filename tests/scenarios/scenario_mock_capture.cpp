@@ -1,14 +1,4 @@
-// scenario_mock_capture.cpp
-//
-// Scenario: run a complete mock capture session end-to-end.
-//
-// Covers:
-//   • interface listing and selection
-//   • start / stop capture
-//   • TCP/UDP/ICMP packet parsing
-//   • statistics calculation
-//
-// Returns 0 on success, 1 on any unexpected failure.
+
 
 #include "PacketCapture.h"
 #include "PacketParser.h"
@@ -21,7 +11,7 @@
 int main() {
     std::cout << "[scenario_mock_capture] Starting...\n";
 
-    // ── 1. Interface listing ───────────────────────────────────────────────
+
     PacketCapture capture(std::make_unique<MockCaptureStrategy>());
     auto ifaces = capture.listInterfaces();
 
@@ -31,21 +21,21 @@ int main() {
     }
     std::cout << "[OK] Found " << ifaces.size() << " simulated interface(s).\n";
 
-    // ── 2. Interface selection ─────────────────────────────────────────────
+
     if (!capture.selectInterface(0)) {
         std::cerr << "[FAIL] selectInterface(0) failed.\n";
         return 1;
     }
     std::cout << "[OK] Interface 0 selected.\n";
 
-    // Invalid index must be rejected.
+
     if (capture.selectInterface(-1)) {
         std::cerr << "[FAIL] selectInterface(-1) should have failed.\n";
         return 1;
     }
     std::cout << "[OK] Negative index correctly rejected.\n";
 
-    // ── 3. Start capture ───────────────────────────────────────────────────
+
     if (!capture.startCapture()) {
         std::cerr << "[FAIL] startCapture() failed.\n";
         return 1;
@@ -56,7 +46,7 @@ int main() {
     }
     std::cout << "[OK] Capture started.\n";
 
-    // ── 4. Packet parsing & statistics ────────────────────────────────────
+
     PacketParser      parser;
     TrafficStatistics stats;
     int               packetCount = 0;
@@ -69,7 +59,7 @@ int main() {
         stats.addPacket(info);
         ++packetCount;
 
-        // Each packet must have non-empty IPs and a known protocol.
+
         if (info.sourceIp.empty() || info.destinationIp.empty()) {
             std::cerr << "[FAIL] Packet " << packetCount << " has empty IP.\n";
             return 1;
@@ -83,7 +73,7 @@ int main() {
         return 1;
     }
 
-    // ── 5. Statistics sanity checks ───────────────────────────────────────
+
     if (stats.getTotalPackets() != static_cast<std::size_t>(packetCount)) {
         std::cerr << "[FAIL] Statistics packet count mismatch.\n";
         return 1;
@@ -101,7 +91,7 @@ int main() {
         return 1;
     }
 
-    // TCP, UDP and ICMP packets must all appear.
+
     const auto& proto = stats.getProtocolStats();
     if (proto.count(Protocol::TCP) == 0 ||
         proto.count(Protocol::UDP) == 0 ||
@@ -112,9 +102,7 @@ int main() {
 
     std::cout << "[OK] Statistics verified (TCP/UDP/ICMP all present).\n";
 
-    // ── 6. Stop capture ───────────────────────────────────────────────────
-    // After the mock drains, isRunning() is already false; stopCapture()
-    // on a stopped capture must not crash.
+  
     capture.stopCapture();
     if (capture.isRunning()) {
         std::cerr << "[FAIL] isRunning() should be false after stopCapture.\n";

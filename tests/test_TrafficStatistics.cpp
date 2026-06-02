@@ -15,14 +15,14 @@ PacketInfo makePacket(const std::string& src, const std::string& dst,
     return p;
 }
 
-} // namespace
+} 
 
 class TrafficStatisticsTest : public ::testing::Test {
 protected:
     TrafficStatistics stats;
 };
 
-// 1. Fresh instance has zero packets and zero bytes
+
 TEST_F(TrafficStatisticsTest, InitiallyEmpty) {
     EXPECT_EQ(stats.getTotalPackets(), 0u);
     EXPECT_EQ(stats.getTotalBytes(),   0u);
@@ -30,7 +30,7 @@ TEST_F(TrafficStatisticsTest, InitiallyEmpty) {
     EXPECT_TRUE(stats.getProtocolStats().empty());
 }
 
-// 2. addPacket increments total packet count
+
 TEST_F(TrafficStatisticsTest, AddPacketIncrementsTotalCount) {
     stats.addPacket(makePacket("1.1.1.1", "2.2.2.2", Protocol::TCP, 100));
     EXPECT_EQ(stats.getTotalPackets(), 1u);
@@ -39,14 +39,14 @@ TEST_F(TrafficStatisticsTest, AddPacketIncrementsTotalCount) {
     EXPECT_EQ(stats.getTotalPackets(), 2u);
 }
 
-// 3. addPacket accumulates byte totals correctly
+
 TEST_F(TrafficStatisticsTest, AddPacketAccumulatesBytes) {
     stats.addPacket(makePacket("1.1.1.1", "2.2.2.2", Protocol::TCP,  400));
     stats.addPacket(makePacket("1.1.1.1", "2.2.2.2", Protocol::TCP,  600));
     EXPECT_EQ(stats.getTotalBytes(), 1000u);
 }
 
-// 4. Per-IP stats aggregate packets and bytes from the same source
+
 TEST_F(TrafficStatisticsTest, SameSourceIpAggregated) {
     stats.addPacket(makePacket("10.0.0.1", "10.0.0.2", Protocol::TCP, 100));
     stats.addPacket(makePacket("10.0.0.1", "10.0.0.3", Protocol::UDP, 200));
@@ -57,7 +57,7 @@ TEST_F(TrafficStatisticsTest, SameSourceIpAggregated) {
     EXPECT_EQ(ip.at("10.0.0.1").totalBytes,  300u);
 }
 
-// 5. Per-protocol counter tracks distinct protocols
+
 TEST_F(TrafficStatisticsTest, ProtocolCountsSeparated) {
     stats.addPacket(makePacket("a", "b", Protocol::TCP,  100));
     stats.addPacket(makePacket("a", "b", Protocol::TCP,  100));
@@ -70,7 +70,7 @@ TEST_F(TrafficStatisticsTest, ProtocolCountsSeparated) {
     EXPECT_EQ(proto.at(Protocol::ICMP), 1u);
 }
 
-// 6. reset() clears all counters
+
 TEST_F(TrafficStatisticsTest, ResetClearsEverything) {
     stats.addPacket(makePacket("1.2.3.4", "5.6.7.8", Protocol::TCP, 500));
     stats.reset();
@@ -81,14 +81,14 @@ TEST_F(TrafficStatisticsTest, ResetClearsEverything) {
     EXPECT_TRUE(stats.getProtocolStats().empty());
 }
 
-// 7. Zero-byte packet is counted but adds nothing to byte total
+
 TEST_F(TrafficStatisticsTest, ZeroBytesPacketCounted) {
     stats.addPacket(makePacket("0.0.0.0", "0.0.0.1", Protocol::UNKNOWN, 0));
     EXPECT_EQ(stats.getTotalPackets(), 1u);
     EXPECT_EQ(stats.getTotalBytes(),   0u);
 }
 
-// 8. Multiple different source IPs each get their own entry
+
 TEST_F(TrafficStatisticsTest, MultipleSourceIpsTrackedSeparately) {
     stats.addPacket(makePacket("1.1.1.1", "9.9.9.9", Protocol::TCP, 100));
     stats.addPacket(makePacket("2.2.2.2", "9.9.9.9", Protocol::TCP, 200));

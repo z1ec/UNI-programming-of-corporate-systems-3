@@ -1,10 +1,7 @@
 #include <gtest/gtest.h>
 #include "PacketCapture.h"
 
-// ---------------------------------------------------------------------------
-// Lightweight test strategy – same interface as MockCaptureStrategy
-// but returns only N packets with zero delay and accepts any non-negative index.
-// ---------------------------------------------------------------------------
+
 class FastTestStrategy : public ICaptureStrategy {
 public:
     explicit FastTestStrategy(int maxPkts = 5, int maxIfaces = 3)
@@ -59,11 +56,7 @@ private:
     bool running_       = false;
 };
 
-// ---------------------------------------------------------------------------
-// PacketCapture tests
-// ---------------------------------------------------------------------------
 
-// 1. listInterfaces() delegates to strategy and returns non-empty list
 TEST(PacketCaptureTest, ListInterfacesReturnsNonEmpty) {
     PacketCapture cap(std::make_unique<FastTestStrategy>());
     auto ifaces = cap.listInterfaces();
@@ -71,33 +64,29 @@ TEST(PacketCaptureTest, ListInterfacesReturnsNonEmpty) {
     EXPECT_EQ(ifaces.size(), 3u);
 }
 
-// 2. selectInterface() with valid index succeeds
+
 TEST(PacketCaptureTest, SelectInterfaceValidIndex) {
     PacketCapture cap(std::make_unique<FastTestStrategy>());
     EXPECT_TRUE(cap.selectInterface(0));
     EXPECT_TRUE(cap.selectInterface(2));
 }
 
-// 3. selectInterface() with negative index fails
 TEST(PacketCaptureTest, SelectInterfaceNegativeIndex) {
     PacketCapture cap(std::make_unique<FastTestStrategy>());
     EXPECT_FALSE(cap.selectInterface(-1));
 }
 
-// 4. selectInterface() with out-of-range index fails
 TEST(PacketCaptureTest, SelectInterfaceOutOfRange) {
     PacketCapture cap(std::make_unique<FastTestStrategy>());
     EXPECT_FALSE(cap.selectInterface(10));
 }
 
-// 5. startCapture() without prior selectInterface fails
 TEST(PacketCaptureTest, StartCaptureWithoutSelectFails) {
     PacketCapture cap(std::make_unique<FastTestStrategy>());
     EXPECT_FALSE(cap.startCapture());
     EXPECT_FALSE(cap.isRunning());
 }
 
-// 6. startCapture() after selectInterface succeeds and isRunning becomes true
 TEST(PacketCaptureTest, StartCaptureAfterSelectSucceeds) {
     PacketCapture cap(std::make_unique<FastTestStrategy>());
     ASSERT_TRUE(cap.selectInterface(0));
@@ -105,7 +94,6 @@ TEST(PacketCaptureTest, StartCaptureAfterSelectSucceeds) {
     EXPECT_TRUE(cap.isRunning());
 }
 
-// 7. getNextPacket() returns valid packets while running then nullopt
 TEST(PacketCaptureTest, GetNextPacketDrainsAndStops) {
     PacketCapture cap(std::make_unique<FastTestStrategy>(3));
     ASSERT_TRUE(cap.selectInterface(0));
@@ -120,7 +108,6 @@ TEST(PacketCaptureTest, GetNextPacketDrainsAndStops) {
     EXPECT_FALSE(cap.isRunning());
 }
 
-// 8. stopCapture() sets isRunning() to false
 TEST(PacketCaptureTest, StopCaptureStopsRunning) {
     PacketCapture cap(std::make_unique<FastTestStrategy>(100));
     ASSERT_TRUE(cap.selectInterface(1));
@@ -130,12 +117,11 @@ TEST(PacketCaptureTest, StopCaptureStopsRunning) {
     EXPECT_FALSE(cap.isRunning());
 }
 
-// 9. Constructor with null strategy throws
 TEST(PacketCaptureTest, NullStrategyThrows) {
     EXPECT_THROW(PacketCapture cap(nullptr), std::invalid_argument);
 }
 
-// 10. MockCaptureStrategy integration: returns exactly 30 packets
+
 TEST(MockCaptureStrategyTest, Delivers30Packets) {
     MockCaptureStrategy strategy;
     ASSERT_TRUE(strategy.selectInterface(0));

@@ -2,9 +2,7 @@ version: "3.9"
 
 services:
 
-  # ── Interactive application ────────────────────────────────────────────────
-  # Usage: docker-compose run --rm sniffer
-  # For real packet capture add: cap_add + network_mode: host (see below)
+
   sniffer:
     build:
       context: .
@@ -12,16 +10,7 @@ services:
     image: network-packet-sniffer
     stdin_open: true
     tty: true
-    # Uncomment to enable real packet capture (requires host networking):
-    # cap_add:
-    #   - NET_RAW
-    # network_mode: host
-
-  # ── Test runner ────────────────────────────────────────────────────────────
-  # Builds the builder stage (compile + tests already ran during build),
-  # then lets you re-run any ctest command on demand.
-  # Usage: docker-compose run --rm test
-  #        docker-compose run --rm test ctest --test-dir /app/build -R PacketParser --verbose
+   
   test:
     build:
       context: .

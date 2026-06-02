@@ -44,7 +44,7 @@ TrafficStatistics makeStats() {
     return s;
 }
 
-} // namespace
+} 
 
 class ReportGeneratorTest : public ::testing::Test {
 protected:
@@ -53,19 +53,19 @@ protected:
     }
 };
 
-// 1. getOutputPath() returns the path passed to the constructor
+
 TEST_F(ReportGeneratorTest, GetOutputPathMatchesConstructor) {
     ReportGenerator rg("/tmp/test_out.txt");
     EXPECT_EQ(rg.getOutputPath(), "/tmp/test_out.txt");
 }
 
-// 2. Default constructor uses "traffic_report.txt"
+
 TEST_F(ReportGeneratorTest, DefaultOutputPath) {
     ReportGenerator rg;
     EXPECT_EQ(rg.getOutputPath(), "traffic_report.txt");
 }
 
-// 3. generateReport() writes a file that can be opened and read
+
 TEST_F(ReportGeneratorTest, GenerateReportCreatesFile) {
     const std::string path = tmpPath("report_create.txt");
     ReportGenerator rg(path);
@@ -75,7 +75,7 @@ TEST_F(ReportGeneratorTest, GenerateReportCreatesFile) {
     EXPECT_TRUE(fs::exists(path));
 }
 
-// 4. Report content contains expected header text
+
 TEST_F(ReportGeneratorTest, ReportContainsHeader) {
     const std::string path = tmpPath("report_header.txt");
     ReportGenerator rg(path);
@@ -86,7 +86,7 @@ TEST_F(ReportGeneratorTest, ReportContainsHeader) {
     EXPECT_NE(content.find("GLOBAL TOTALS"),  std::string::npos);
 }
 
-// 5. Report content lists protocols found in stats
+
 TEST_F(ReportGeneratorTest, ReportContainsProtocols) {
     const std::string path = tmpPath("report_proto.txt");
     ReportGenerator rg(path);
@@ -97,7 +97,7 @@ TEST_F(ReportGeneratorTest, ReportContainsProtocols) {
     EXPECT_NE(content.find("UDP"), std::string::npos);
 }
 
-// 6. Report with empty stats still succeeds and mentions zero packets
+
 TEST_F(ReportGeneratorTest, EmptyStatsReport) {
     const std::string path = tmpPath("report_empty.txt");
     ReportGenerator rg(path);
@@ -108,7 +108,7 @@ TEST_F(ReportGeneratorTest, EmptyStatsReport) {
     EXPECT_NE(content.find("0"), std::string::npos);
 }
 
-// 7. generateReport() to an unwritable path returns false
+
 TEST_F(ReportGeneratorTest, InvalidPathReturnsFalse) {
     ReportGenerator rg("/nonexistent_dir/x/y/z/report.txt");
     TrafficStatistics stats;
