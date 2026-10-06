@@ -3,4 +3,5 @@ venv
 generate_report.py
 build
 generate_report_pa4.py
-
+traffic_report.txt
+*.pdf
